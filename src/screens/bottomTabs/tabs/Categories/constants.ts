@@ -1,0 +1,441 @@
+export const strings = {
+  title: `Categories`,
+};
+export const agentsCategories = [
+  { id: "all", label: "All", icon: "" },
+  { id: "social-media", label: "Social Media", icon: "account-group" },
+  { id: "health", label: "Health", icon: "heart-pulse" },
+  { id: "sports", label: "Sports", icon: "soccer" },
+  { id: "education", label: "Education", icon: "school" },
+  { id: "entertainment", label: "Entertainment", icon: "movie-open" },
+  { id: "music", label: "Music", icon: "music" },
+  { id: "productivity", label: "Productivity", icon: "clipboard-text" },
+  { id: "travel", label: "Travel", icon: "airplane" },
+];
+
+export const agentsData = [
+  {
+    title: "Social Media",
+    data: [
+      {
+        id: "1",
+        title: "TikTok",
+        description: "Generate My Video hashtags",
+        icon: "music-note-outline",
+      },
+      {
+        id: "2",
+        title: "Telegram",
+        description: "Generate popular Channels in telegram",
+        icon: "send-circle",
+      },
+      {
+        id: "3",
+        title: "Twitter",
+        description: "Generate Most Trending Hashtags",
+        icon: "twitter",
+      },
+      {
+        id: "4",
+        title: "Instagram",
+        description: "Create top performing captions",
+        icon: "instagram",
+      },
+      {
+        id: "5",
+        title: "YouTube",
+        description: "Generate titles for trending videos",
+        icon: "youtube",
+      },
+      {
+        id: "6",
+        title: "LinkedIn",
+        description: "Generate professional post ideas",
+        icon: "linkedin",
+      },
+      {
+        id: "7",
+        title: "Snapchat",
+        description: "Create viral Snap stories",
+        icon: "snapchat",
+      },
+      {
+        id: "8",
+        title: "Reddit",
+        description: "Find and engage niche subreddits",
+        icon: "reddit",
+      },
+    ],
+  },
+  {
+    title: "Health",
+    data: [
+      {
+        id: "9",
+        title: "Medicine",
+        description: "Generate Text For My All Medicine",
+        icon: "pill",
+      },
+      {
+        id: "10",
+        title: "Disease",
+        description: "Generate Text For All Disease problems",
+        icon: "biohazard",
+      },
+      {
+        id: "11",
+        title: "Natural",
+        description: "Generate Text For Natural Medicine",
+        icon: "leaf",
+      },
+      {
+        id: "12",
+        title: "Fitness",
+        description: "Create custom fitness routines",
+        icon: "dumbbell",
+      },
+      {
+        id: "13",
+        title: "Diet",
+        description: "Generate healthy meal plans",
+        icon: "food-apple",
+      },
+      {
+        id: "14",
+        title: "Mental Health",
+        description: "Get text-based therapy support",
+        icon: "brain",
+      },
+      {
+        id: "15",
+        title: "Sleep",
+        description: "Improve sleep habits and routines",
+        icon: "sleep",
+      },
+      {
+        id: "16",
+        title: "Skin Care",
+        description: "Generate skincare suggestions",
+        icon: "face-woman",
+      },
+    ],
+  },
+  {
+    title: "Sports",
+    data: [
+      {
+        id: "17",
+        title: "Football",
+        description: "Generate Football News",
+        icon: "football",
+      },
+      {
+        id: "18",
+        title: "Cricket",
+        description: "Generate Cricket Commentary",
+        icon: "cricket",
+      },
+      {
+        id: "19",
+        title: "Tennis",
+        description: "Generate Tennis Stats",
+        icon: "tennis",
+      },
+      {
+        id: "20",
+        title: "Basketball",
+        description: "Get game predictions and news",
+        icon: "basketball",
+      },
+      {
+        id: "21",
+        title: "Baseball",
+        description: "Generate Baseball game reviews",
+        icon: "baseball",
+      },
+      {
+        id: "22",
+        title: "Hockey",
+        description: "Hockey updates and team stats",
+        icon: "hockey-sticks",
+      },
+      {
+        id: "23",
+        title: "Running",
+        description: "Track running and training plans",
+        icon: "run",
+      },
+      {
+        id: "24",
+        title: "Golf",
+        description: "Golf tips and tournament results",
+        icon: "golf",
+      },
+    ],
+  },
+  {
+    title: "Education",
+    data: [
+      {
+        id: "25",
+        title: "Math Tutor",
+        description: "Explain complex math problems",
+        icon: "function",
+      },
+      {
+        id: "26",
+        title: "Science Help",
+        description: "Simplify scientific concepts",
+        icon: "flask",
+      },
+      {
+        id: "27",
+        title: "Essay Writer",
+        description: "Generate well-structured essays",
+        icon: "file-document-edit",
+      },
+      {
+        id: "28",
+        title: "Flashcards",
+        description: "Create quick study flashcards",
+        icon: "cards",
+      },
+      {
+        id: "29",
+        title: "Language Learning",
+        description: "Practice new languages",
+        icon: "translate",
+      },
+      {
+        id: "30",
+        title: "Exam Prep",
+        description: "Prepare for competitive exams",
+        icon: "clipboard-list",
+      },
+      {
+        id: "31",
+        title: "Code Helper",
+        description: "Debug and explain code",
+        icon: "code-tags",
+      },
+      {
+        id: "32",
+        title: "History Facts",
+        description: "Learn history with facts",
+        icon: "book-open-page-variant",
+      },
+    ],
+  },
+  {
+    title: "Entertainment",
+    data: [
+      {
+        id: "33",
+        title: "Movie Recommender",
+        description: "Find trending movies to watch",
+        icon: "movie",
+      },
+      {
+        id: "34",
+        title: "TV Shows",
+        description: "Suggest binge-worthy shows",
+        icon: "television",
+      },
+      {
+        id: "35",
+        title: "Music Generator",
+        description: "Discover mood-based playlists",
+        icon: "music-note",
+      },
+      {
+        id: "36",
+        title: "Joke Bot",
+        description: "Get a fresh joke anytime",
+        icon: "emoticon-lol",
+      },
+      {
+        id: "37",
+        title: "Story Generator",
+        description: "Generate fun stories",
+        icon: "book-variant",
+      },
+      {
+        id: "38",
+        title: "Game Ideas",
+        description: "New game concepts to try",
+        icon: "gamepad-variant",
+      },
+      {
+        id: "39",
+        title: "Horoscope",
+        description: "Read today's horoscope",
+        icon: "star-four-points",
+      },
+      {
+        id: "40",
+        title: "Quiz Time",
+        description: "Try random trivia quizzes",
+        icon: "help-circle",
+      },
+    ],
+  },
+  {
+    title: "Music",
+    data: [
+      {
+        id: "41",
+        title: "Playlist Creator",
+        description: "Auto-generate playlists by mood or genre",
+        icon: "playlist-music",
+      },
+      {
+        id: "42",
+        title: "Lyrics Generator",
+        description: "Write lyrics for any topic or emotion",
+        icon: "music-note-outline",
+      },
+      {
+        id: "43",
+        title: "Beat Maker",
+        description: "Generate beats and loops",
+        icon: "music-circle",
+      },
+      {
+        id: "44",
+        title: "Music Recommender",
+        description: "Suggest songs based on taste",
+        icon: "music-circle",
+      },
+      {
+        id: "45",
+        title: "Voice Coach",
+        description: "Train your vocals with AI tips",
+        icon: "microphone",
+      },
+      {
+        id: "46",
+        title: "Instrument Guide",
+        description: "Learn how to play any instrument",
+        icon: "guitar-electric",
+      },
+      {
+        id: "47",
+        title: "Genre Mixer",
+        description: "Blend genres for creative tracks",
+        icon: "equalizer",
+      },
+      {
+        id: "48",
+        title: "AI DJ",
+        description: "Get live mixes for your party",
+        icon: "headphones",
+      },
+    ],
+  },
+  {
+    title: "Productivity",
+    data: [
+      {
+        id: "49",
+        title: "To-Do Bot",
+        description: "Organize daily tasks",
+        icon: "check",
+      },
+      {
+        id: "50",
+        title: "Meeting Notes",
+        description: "Auto-generate meeting summaries",
+        icon: "note-multiple",
+      },
+      {
+        id: "51",
+        title: "Email Writer",
+        description: "Craft quick, formal emails",
+        icon: "email-outline",
+      },
+      {
+        id: "52",
+        title: "Resume Builder",
+        description: "Generate professional resumes",
+        icon: "file-document",
+      },
+      {
+        id: "53",
+        title: "Project Manager",
+        description: "Organize your workflow",
+        icon: "briefcase",
+      },
+      {
+        id: "54",
+        title: "Focus Timer",
+        description: "Pomodoro focus sessions",
+        icon: "timer-sand",
+      },
+      {
+        id: "55",
+        title: "Habit Tracker",
+        description: "Track and build new habits",
+        icon: "history",
+      },
+      {
+        id: "56",
+        title: "Clipboard",
+        description: "Save useful content for reuse",
+        icon: "clipboard-account",
+      },
+    ],
+  },
+  {
+    title: "Travel",
+    data: [
+      {
+        id: "57",
+        title: "Flight Finder",
+        description: "Find best flight deals",
+        icon: "airplane",
+      },
+      {
+        id: "58",
+        title: "Hotel Deals",
+        description: "Compare hotel prices",
+        icon: "home-city",
+      },
+      {
+        id: "59",
+        title: "Itinerary Planner",
+        description: "Plan your travel day-by-day",
+        icon: "calendar-text",
+      },
+      {
+        id: "60",
+        title: "Local Guide",
+        description: "Get recommendations nearby",
+        icon: "map-marker-outline",
+      },
+      {
+        id: "61",
+        title: "Packing List",
+        description: "Don’t forget travel essentials",
+        icon: "bag-personal",
+      },
+      {
+        id: "62",
+        title: "Translator",
+        description: "Translate languages instantly",
+        icon: "translate",
+      },
+      {
+        id: "63",
+        title: "Currency Converter",
+        description: "Convert international currency",
+        icon: "currency-usd",
+      },
+      {
+        id: "64",
+        title: "Time Zones",
+        description: "Check time in any country",
+        icon: "clock-outline",
+      },
+    ],
+  },
+];

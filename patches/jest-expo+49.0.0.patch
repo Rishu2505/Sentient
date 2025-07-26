@@ -1,0 +1,112 @@
+diff --git a/node_modules/jest-expo/src/preset/setup.js b/node_modules/jest-expo/src/preset/setup.js
+index 075ff92..d17fc7c 100644
+--- a/node_modules/jest-expo/src/preset/setup.js
++++ b/node_modules/jest-expo/src/preset/setup.js
+@@ -5,15 +5,17 @@
+ 'use strict';
+ 
+ const mockNativeModules = require('react-native/Libraries/BatchedBridge/NativeModules');
+-
+ const publicExpoModules = require('./expoModules');
+ const internalExpoModules = require('./internalExpoModules');
+ 
+-// window isn't defined as of react-native 0.45+ it seems
+-if (typeof window !== 'object') {
+-  globalThis.window = global;
+-  globalThis.window.navigator = {};
++// ✅ Ensure `global.window` and `global.navigator` are valid objects
++if (typeof global.window !== 'object' || global.window === null) {
++  global.window = global;
++}
++if (typeof global.navigator !== 'object' || global.navigator === null) {
++  global.navigator = {};
+ }
++global.window.navigator = global.navigator;
+ 
+ const mockImageLoader = {
+   configurable: true,
+@@ -94,16 +96,21 @@ for (const moduleName of Object.keys(expoModules)) {
+   });
+ }
+ 
+-Object.keys(mockNativeModules.NativeUnimoduleProxy.viewManagersMetadata).forEach(
+-  (viewManagerName) => {
+-    Object.defineProperty(mockNativeModules.UIManager, `ViewManagerAdapter_${viewManagerName}`, {
+-      get: () => ({
+-        NativeProps: {},
+-        directEventTypes: [],
+-      }),
+-    });
+-  }
+-);
++if (
++  typeof mockNativeModules?.NativeUnimoduleProxy?.viewManagersMetadata === 'object' &&
++  typeof mockNativeModules?.UIManager === 'object'
++) {
++  Object.keys(mockNativeModules.NativeUnimoduleProxy.viewManagersMetadata).forEach(
++    (viewManagerName) => {
++      Object.defineProperty(mockNativeModules.UIManager, `ViewManagerAdapter_${viewManagerName}`, {
++        get: () => ({
++          NativeProps: {},
++          directEventTypes: [],
++        }),
++      });
++    }
++  );
++}
+ 
+ try {
+   jest.mock('expo-file-system', () => ({
+@@ -119,7 +126,6 @@ try {
+     createDownloadResumable: jest.fn(() => Promise.resolve()),
+   }));
+ } catch (error) {
+-  // Allow this module to be optional for bare-workflow
+   if (error.code !== 'MODULE_NOT_FOUND') {
+     throw error;
+   }
+@@ -145,18 +151,10 @@ jest.mock('react-native/Libraries/Image/AssetRegistry', () => ({
+ jest.doMock('react-native/Libraries/BatchedBridge/NativeModules', () => mockNativeModules);
+ 
+ jest.doMock('react-native/Libraries/LogBox/LogBox', () => ({
+-  ignoreLogs: (patterns) => {
+-    // Do nothing.
+-  },
+-  ignoreAllLogs: (value) => {
+-    // Do nothing.
+-  },
+-  install: () => {
+-    // Do nothing.
+-  },
+-  uninstall: () => {
+-    // Do nothing.
+-  },
++  ignoreLogs: (patterns) => {},
++  ignoreAllLogs: (value) => {},
++  install: () => {},
++  uninstall: () => {},
+ }));
+ 
+ try {
+@@ -164,13 +162,6 @@ try {
+     const ExpoModulesCore = jest.requireActual('expo-modules-core');
+     const { NativeModulesProxy } = ExpoModulesCore;
+ 
+-    // After the NativeModules mock is set up, we can mock NativeModuleProxy's functions that call
+-    // into the native proxy module. We're not really interested in checking whether the underlying
+-    // method is called, just that the proxy method is called, since we have unit tests for the
+-    // adapter and believe it works correctly.
+-    //
+-    // NOTE: The adapter validates the number of arguments, which we don't do in the mocked functions.
+-    // This means the mock functions will not throw validation errors the way they would in an app.
+     for (const moduleName of Object.keys(NativeModulesProxy)) {
+       const nativeModule = NativeModulesProxy[moduleName];
+       for (const propertyName of Object.keys(nativeModule)) {
+@@ -183,7 +174,6 @@ try {
+     return ExpoModulesCore;
+   });
+ } catch (error) {
+-  // Allow this module to be optional for bare-workflow
+   if (error.code !== 'MODULE_NOT_FOUND') {
+     throw error;
+   }
