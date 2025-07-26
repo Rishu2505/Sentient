@@ -103,8 +103,8 @@ project/
 ### 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/sentient-mobile.git
-cd sentient-mobile
+git clone https://github.com/Rishu2505/Sentient.git
+cd sentient
 npm install
 ```
 
