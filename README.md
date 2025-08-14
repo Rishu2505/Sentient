@@ -6,23 +6,8 @@ This is a React Native mobile application built with **Expo** for the [Sentient 
 
 ## 📸 Screenshots
 
-### Agents
-![Agent Screen](./assets/images/agents.png)
-
-### Agent Home
-![Agent Home](./assets/images/agent_home.png)
-
-### Agent Chat Interface
-![Chat Interface](./assets/images/agent_chat.png)
-
-### Categories
-![Categories Screen](./assets/images/categories.png)
-
-### History
-![History Screen](./assets/images/history.png)
-
-### Profile
-![Profile Screen](./assets/images/profile.png)
+### All Screens
+![All Screens](./assets/images/sentient.gif)
 
 ---
 

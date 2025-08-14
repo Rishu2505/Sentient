@@ -5,7 +5,7 @@ import { SVGIcons } from 'src/assets';
 import { useIsFocused } from '@react-navigation/native';
 import { useHaptics } from 'src/hooks';
 import { useState } from 'react';
-import Animated, { ZoomIn, ZoomInEasyDown, ZoomInEasyUp, ZoomOutUp } from 'react-native-reanimated';
+import Animated, { ZoomInEasyDown } from 'react-native-reanimated';
 
 const icons: {
   [key: string]: {
@@ -56,7 +56,7 @@ function TabBar({ label, onPress }: any) {
             key={`icon-${label}-${iconKey}`}
             entering={ZoomInEasyDown.duration(250)}
           >
-            <Icon fill={'red'} height={normalize(24)} width={normalize(24)} />
+            <Icon height={normalize(24)} width={normalize(24)} />
           </Animated.View>
           <Animated.View
             key={`icon-${iconKey}`}

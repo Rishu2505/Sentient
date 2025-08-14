@@ -13,7 +13,12 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mukesh25.Sentient",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSAppTransportSecurity": { "NSAllowsArbitraryLoads": true }
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -25,14 +30,13 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "assets": [
-      "./src/assets/fonts"
-    ],
-    "plugins": [
-      "expo-font"
-    ],
+    "assets": ["./src/assets/fonts"],
+    "plugins": ["expo-font"],
     "extra": {
-      "OPENAI_API_KEY": "your-openai-key-here"
+      "OPENAI_API_KEY": "your_key_here",
+      "eas": {
+        "projectId": "9c9aa251-1c86-4b86-92bb-246d8e2c0ff3"
+      }
     }
   }
 }
